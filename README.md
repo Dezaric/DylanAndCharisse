@@ -1,2 +1,0 @@
-# DylanAndCharisse
-Wedding Website
