@@ -1,34 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Placeholder Page</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dylan & Charisse | We're Getting Married</title>
+<meta name="description" content="This invitation is exclusively for you">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header class="site-header">
-    <h1>My Placeholder Website</h1>
-    <p>Just some dummy text for testing layout.</p>
-  </header>
+<body class="locked">
 
-  <main class="content">
-    <section class="card">
-      <h2>Section Title</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </section>
+  <!-- ENVELOPE INTRO -->
+  <div id="envelope-intro" class="envelope-intro">
+    <div class="envelope-wrap" id="envelope-wrap">
+      <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+        <div class="envelope-letter">
+          <p class="letter-names">Dylan &amp; Charisse</p>
+          <p class="letter-sub">request the pleasure of your company</p>
+        </div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal" id="envelope-seal">D&amp;C</div>
+      </div>
+    </div>
+    <p class="envelope-hint" id="envelope-hint">Tap the envelope to open</p>
+  </div>
+  <div class="envelope-flash" id="envelope-flash"></div>
 
-    <section class="card">
-      <h2>Another Section</h2>
-      <p>
-        More placeholder text goes here. Replace this with real content later.
-      </p>
-    </section>
-  </main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">We are getting married</p>
+      <h1 class="couple-names">Dylan<span class="amp">&amp;</span>Charisse</h1>
+      <p class="wedding-date">Friday, 19th June 2026</p>
+    </div>
+    <a href="#rsvp" class="hero-rsvp">
+      <span>RSVP</span>
+      <span class="scroll-cue">↓</span>
+    </a>
+  </section>
 
-  <footer class="site-footer">
+  <!-- WELCOME -->
+  <section class="welcome">
+    <div class="welcome-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.9-10-9.3C.3 8.4 2 5 5.4 5 7.6 5 9.5 6.2 12 9c2.5-2.8 4.4-4 6.6-4C22 5 23.7 8.4 22 11.7 19.5 16.1 12 21 12 21z"/></svg>
+    </div>
+    <p class="section-label">Welcome</p>
+    <div class="welcome-card">
+      <p>We are truly delighted to invite you to share in the celebration of our wedding.</p>
+      <p>Our wedding ceremony and celebration will take place on
+        <strong>Friday, 19th June 2026</strong>. We would be honoured to have you with us.</p>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <h3>Countdown</h3>
+    <p class="countdown-sub">Until the most beautiful day of our lives</p>
+    <div id="countdown" class="countdown">
+      <div class="c-block"><span id="cd-days">00</span><small>Days</small></div>
+      <div class="c-block"><span id="cd-hours">00</span><small>Hours</small></div>
+      <div class="c-block"><span id="cd-minutes">00</span><small>Minutes</small></div>
+      <div class="c-block"><span id="cd-seconds">00</span><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- VENUES -->
+  <section class="venues">
+    <h3>The Venues</h3>
+    <p class="section-sub">Our wedding day locations</p>
+    <div class="venue-cards">
+      <div class="venue-card">
+        <div class="venue-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M4 9h16"/></svg>
+        </div>
+        <h4>Ceremony</h4>
+        <p class="venue-time">18:00</p>
+        <p class="venue-place">The Sunken Garden<br>Westin Dragonara, St. Julian's</p>
+        <div class="venue-photo" style="background-image:url('images/venue-ceremony.jpg')"></div>
+        <a class="venue-btn" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Westin+Dragonara+St+Julians+Malta">Open in Maps</a>
+      </div>
+      <div class="venue-card">
+        <div class="venue-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h10l-1 5a4 4 0 01-8 0L7 3z"/><path d="M12 12v6"/><path d="M8 21h8"/></svg>
+        </div>
+        <h4>Reception</h4>
+        <p class="venue-time">19:30</p>
+        <p class="venue-place">Reef Club<br>Westin Dragonara, St. Julian's</p>
+        <div class="venue-photo" style="background-image:url('images/venue-reception.jpg')"></div>
+        <a class="venue-btn" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Westin+Dragonara+St+Julians+Malta">Open in Maps</a>
+      </div>
+    </div>
+    <button class="calendar-btn" id="add-to-calendar">Add to Calendar</button>
+  </section>
+
+  <!-- ORDER OF THE DAY -->
+  <section class="timeline-section">
+    <h3>Order of the Day</h3>
+    <p class="section-sub">Schedule for our celebration</p>
+    <div class="timeline-card">
+      <div class="timeline-date">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        Friday, 19 June 2026
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">18:00</div>
+        <div class="timeline-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <div class="timeline-text">
+          <p class="timeline-title">Ceremony</p>
+          <p class="timeline-place">The Sunken Garden, Westin Dragonara</p>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">19:30</div>
+        <div class="timeline-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h10l-1 5a4 4 0 01-8 0L7 3z"/><path d="M12 12v6"/><path d="M8 21h8"/></svg>
+        </div>
+        <div class="timeline-text">
+          <p class="timeline-title">Reception</p>
+          <p class="timeline-place">Reef Club, Westin Dragonara</p>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">22:00</div>
+        <div class="timeline-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21h16"/><path d="M6 21v-6a6 6 0 0112 0v6"/><path d="M12 15V9"/><circle cx="12" cy="6" r="2"/></svg>
+        </div>
+        <div class="timeline-text">
+          <p class="timeline-title">Cake Cutting</p>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">22:30</div>
+        <div class="timeline-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+        </div>
+        <div class="timeline-text">
+          <p class="timeline-title">First Dance</p>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">23:00</div>
+        <div class="timeline-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 3l1.5 3L10 7l-3.5 1L5 11l-1.5-3L0 7l3.5-1L5 3z"/><path d="M18 10l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></svg>
+        </div>
+        <div class="timeline-text">
+          <p class="timeline-title">Party</p>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">00:30</div>
+        <div class="timeline-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M9 15c1-1 5-1 6 0"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>
+        </div>
+        <div class="timeline-text">
+          <p class="timeline-title">After Party</p>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">02:00</div>
+        <div class="timeline-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.9-10-9.3C.3 8.4 2 5 5.4 5 7.6 5 9.5 6.2 12 9c2.5-2.8 4.4-4 6.6-4C22 5 23.7 8.4 22 11.7 19.5 16.1 12 21 12 21z"/></svg>
+        </div>
+        <div class="timeline-text">
+          <p class="timeline-title">Send Off</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section class="dress-code">
+    <h3>Dress Code</h3>
+    <p class="section-sub">Black Tie / Formal Attire</p>
+    <div class="dress-card">
+      <div class="dress-col">
+        <h4>Gentlemen</h4>
+        <p>Tuxedos or dark suits</p>
+      </div>
+      <div class="dress-divider"></div>
+      <div class="dress-col">
+        <h4>Ladies</h4>
+        <p>Elegant evening gowns</p>
+      </div>
+      <p class="dress-note">Out of respect for the bride, we kindly ask guests to refrain
+        from wearing white, ivory, or bridal-style colours.</p>
+    </div>
+  </section>
+
+  <!-- GIFTS -->
+  <section class="gifts">
+    <div class="gifts-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 12h18"/><path d="M12 8v13"/><path d="M12 8c-2 0-3.5-1.2-3.5-3S9 2 10.5 2 12 4 12 5"/><path d="M12 8c2 0 3.5-1.2 3.5-3S15 2 13.5 2 12 4 12 5"/></svg>
+    </div>
+    <p class="section-label">Gifts</p>
+    <div class="gifts-card">
+      <div class="gifts-heart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.9-10-9.3C.3 8.4 2 5 5.4 5 7.6 5 9.5 6.2 12 9c2.5-2.8 4.4-4 6.6-4C22 5 23.7 8.4 22 11.7 19.5 16.1 12 21 12 21z"/></svg>
+      </div>
+      <p>Your presence at our wedding is the greatest gift of all.</p>
+      <p>Should you wish to honour us with a gift, a monetary contribution
+        would be greatly appreciated.</p>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <p class="section-label">Kindly Respond</p>
+    <h3>RSVP</h3>
+    <p class="rsvp-sub">Please let us know by 19th May 2026</p>
+
+    <div class="rsvp-card">
+      <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="form-field">
+          <label for="rsvp-email">Email (optional)</label>
+          <input type="email" id="rsvp-email" name="email" placeholder="you@example.com">
+        </div>
+
+        <fieldset class="form-field">
+          <legend>Will you attend our wedding? *</legend>
+          <label class="radio-row">
+            <input type="radio" name="attending" value="yes" required checked>
+            Yes, I will joyfully attend
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="attending" value="no" required>
+            Sorry, I cannot attend
+          </label>
+        </fieldset>
+
+        <div class="form-field">
+          <label class="icon-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            How many guests will attend?
+          </label>
+          <p class="counter-caption">Adults</p>
+          <div class="guest-counter">
+            <button type="button" id="guest-minus" aria-label="Decrease guests">-</button>
+            <span id="guest-count">1</span>
+            <button type="button" id="guest-plus" aria-label="Increase guests">+</button>
+          </div>
+          <input type="hidden" id="guest-count-input" name="guest_count" value="1">
+          <p class="confirming-text">Confirming: <span id="confirming-count">1</span> adult</p>
+        </div>
+
+        <div class="form-field">
+          <label>Name of each guest</label>
+          <div id="guest-names">
+            <div class="guest-name-field">
+              <label for="guest-name-1">Adult 1 (primary contact)</label>
+              <input type="text" id="guest-name-1" name="guest_name_1" placeholder="Full Name" required>
+            </div>
+          </div>
+        </div>
+
+        <fieldset class="form-field">
+          <legend class="icon-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17h14l-1.4-7.5a5 5 0 00-9.2 0L7 17z"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>
+            Parking
+          </legend>
+          <p class="fieldset-caption">Do you need us to reserve parking for the ceremony?</p>
+          <label class="radio-row">
+            <input type="radio" name="parking" value="yes">
+            Yes, please reserve parking
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="parking" value="no">
+            No, I don't need parking
+          </label>
+        </fieldset>
+
+        <fieldset class="form-field">
+          <legend class="icon-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l9 16H3l9-16z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+            Dietary Requirements
+          </legend>
+          <p class="fieldset-caption">Please let us know if you have any allergies or dietary restrictions:</p>
+          <div class="checkbox-grid">
+            <label class="check-row"><input type="checkbox" name="dietary" value="gluten_free">Gluten-free / Celiac</label>
+            <label class="check-row"><input type="checkbox" name="dietary" value="lactose_free">Lactose-free</label>
+            <label class="check-row"><input type="checkbox" name="dietary" value="vegetarian">Vegetarian</label>
+            <label class="check-row"><input type="checkbox" name="dietary" value="vegan">Vegan</label>
+            <label class="check-row"><input type="checkbox" name="dietary" value="nut_allergy">Nut allergy</label>
+            <label class="check-row"><input type="checkbox" name="dietary" value="seafood_allergy">Seafood allergy</label>
+            <label class="check-row"><input type="checkbox" name="dietary" value="egg_allergy">Egg allergy</label>
+            <label class="check-row"><input type="checkbox" name="dietary" value="soy_allergy">Soy allergy</label>
+          </div>
+          <label class="form-field" style="margin-top:14px;">
+            <span style="font-size:0.95rem; opacity:0.8;">Other allergies or requirements:</span>
+            <input type="text" name="dietary_other" placeholder="E.g., halal, kosher, fructose intolerance...">
+          </label>
+        </fieldset>
+
+        <div class="form-field">
+          <label for="rsvp-message">Message for the couple (optional)</label>
+          <textarea id="rsvp-message" name="message" placeholder="Leave us a message..."></textarea>
+        </div>
+
+        <button type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          Send RSVP
+        </button>
+        <p class="rsvp-note">This form isn't connected to an inbox yet — responses will start
+          arriving by email once it's wired up on the backend.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <p class="section-label">Moments</p>
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+      <img src="images/photo1.jpg" alt="">
+      <img src="images/photo2.jpg" alt="">
+      <img src="images/photo3.jpg" alt="">
+      <img src="images/photo4.jpg" alt="">
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-names">Dylan &amp; Charisse</p>
+    <p class="footer-date">19th June 2026</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
