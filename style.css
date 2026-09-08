@@ -790,6 +790,12 @@ body.locked {
   border-radius: 6px;
   padding: 32px 24px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.venue-card .venue-btn {
+  margin-top: auto;
 }
 
 .venue-icon {
@@ -1452,7 +1458,7 @@ footer {
 .venue-map {
   position: relative;
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(58,49,40,0.2);
