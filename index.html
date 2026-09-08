@@ -3,13 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dylan & Charisse | We're Getting Married</title>
+<title>Charisse & Dylan | We're Getting Married</title>
 <meta name="description" content="This invitation is exclusively for you">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="locked">
+  <!-- Reusable calla-lily branch artwork, referenced by every .calla decoration -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="calla-branch" viewBox="0 0 120 220" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <!-- stem -->
+      <path d="M62 216 C58 178 55 145 56 122"/>
+      <!-- bloom -->
+      <path d="M56 122 C36 102 34 58 58 14 C82 58 80 102 56 122 Z"/>
+      <!-- left leaf -->
+      <path d="M50 150 C30 138 14 118 14 95 C26 116 42 132 50 150 Z"/>
+      <!-- right leaf -->
+      <path d="M58 165 C78 155 96 138 100 120 C90 140 74 155 58 165 Z"/>
+    </symbol>
+  </svg>
 
   <!-- ENVELOPE INTRO -->
   <div id="envelope-intro" class="envelope-intro">
@@ -17,325 +30,497 @@
       <div class="envelope" id="envelope">
         <div class="envelope-back"></div>
         <div class="envelope-letter">
-          <p class="letter-names">Dylan &amp; Charisse</p>
+          <p class="letter-names">Charisse &amp; Dylan</p>
           <p class="letter-sub">request the pleasure of your company</p>
         </div>
         <div class="envelope-flap"></div>
-        <div class="envelope-seal" id="envelope-seal">D&amp;C</div>
+        <div class="envelope-seal" id="envelope-seal">C&amp;D</div>
       </div>
     </div>
     <p class="envelope-hint" id="envelope-hint">Tap the envelope to open</p>
   </div>
   <div class="envelope-flash" id="envelope-flash"></div>
 
+  <!-- SITE NAV -->
+  <header class="site-nav">
+    <nav class="nav-inner">
+      <ul class="nav-links nav-left">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#our-story">Our Story</a></li>
+        <li><a href="#venues">Venue</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+      </ul>
+      <a href="#home" class="nav-logo" aria-label="Charisse and Dylan">
+        <span class="logo-c">C</span><span class="logo-d">D</span>
+      </a>
+      <ul class="nav-links nav-right">
+        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="home">
+    <div class="hero-bg" style="background-image:url('image.png')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="eyebrow">We are getting married</p>
-      <h1 class="couple-names">Dylan<span class="amp">&amp;</span>Charisse</h1>
-      <p class="wedding-date">Friday, 19th June 2026</p>
+      <p class="eyebrow">The Wedding Of</p>
+      <h1 class="couple-names">Charisse<span class="amp">&amp;</span>Dylan</h1>
+      <p class="wedding-date">19 . 06 . 2027</p>
+      <p class="wedding-venue">The Westin Dragonara &middot; Malta</p>
+      <button class="play-btn" id="play-video" aria-label="Play save the date video" type="button">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <p class="play-caption">Play Our Save The Date Video</p>
     </div>
-    <a href="#rsvp" class="hero-rsvp">
-      <span>RSVP</span>
-      <span class="scroll-cue">↓</span>
-    </a>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,60 C360,110 1080,10 1440,60 L1440,100 L0,100 Z"></path></svg>
+    </div>
   </section>
 
   <!-- WELCOME -->
-  <section class="welcome">
-    <div class="welcome-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.9-10-9.3C.3 8.4 2 5 5.4 5 7.6 5 9.5 6.2 12 9c2.5-2.8 4.4-4 6.6-4C22 5 23.7 8.4 22 11.7 19.5 16.1 12 21 12 21z"/></svg>
-    </div>
-    <p class="section-label">Welcome</p>
+  <section class="welcome" id="welcome-intro">
+    <div class="calla calla-tl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <p class="script-lead">We're getting married!</p>
     <div class="welcome-card">
-      <p>We are truly delighted to invite you to share in the celebration of our wedding.</p>
-      <p>Our wedding ceremony and celebration will take place on
-        <strong>Friday, 19th June 2026</strong>. We would be honoured to have you with us.</p>
+      <p>We are so excited to celebrate this special chapter with you. Here you'll find all the details you need for our wedding day.</p>
+      <p>We can't wait to create unforgettable memories together.</p>
+      <p class="welcome-signoff">With all our love,</p>
+      <div class="welcome-monogram"><span class="logo-c">C</span><span class="logo-d">D</span></div>
     </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="quick-links">
+    <a href="#our-story" class="quick-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="14" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5.5-5-4 4-2.5-2.5L3 18"/></svg>
+      <span>Our Story</span>
+    </a>
+    <a href="#venues" class="quick-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+      <span>Venue</span>
+    </a>
+    <a href="#timeline" class="quick-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg>
+      <span>Timeline</span>
+    </a>
+    <a href="#details" class="quick-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M12 11v5"/></svg>
+      <span>Details</span>
+    </a>
+    <a href="#gallery" class="quick-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2.5" y="6" width="19" height="14" rx="1.5"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6l1.3-2.2h5.4L16 6"/></svg>
+      <span>Gallery</span>
+    </a>
   </section>
 
   <!-- COUNTDOWN -->
   <section class="countdown-section">
-    <h3>Countdown</h3>
-    <p class="countdown-sub">Until the most beautiful day of our lives</p>
+    <p class="script-lead script-lead--light">until forever begins</p>
     <div id="countdown" class="countdown">
       <div class="c-block"><span id="cd-days">00</span><small>Days</small></div>
+      <span class="c-colon">:</span>
       <div class="c-block"><span id="cd-hours">00</span><small>Hours</small></div>
+      <span class="c-colon">:</span>
       <div class="c-block"><span id="cd-minutes">00</span><small>Minutes</small></div>
+      <span class="c-colon">:</span>
       <div class="c-block"><span id="cd-seconds">00</span><small>Seconds</small></div>
     </div>
   </section>
 
-  <!-- VENUES -->
-  <section class="venues">
-    <h3>The Venues</h3>
-    <p class="section-sub">Our wedding day locations</p>
+  <!-- RSVP TEASER -->
+  <section class="rsvp-teaser">
+    <div class="rsvp-teaser-inner">
+      <div class="teaser-envelope">
+        <div class="teaser-envelope-back"></div>
+        <div class="teaser-envelope-flap"></div>
+        <div class="teaser-envelope-card">
+          <p class="teaser-kindly">Kindly</p>
+          <p class="teaser-rsvp-word">RSVP</p>
+          <p class="teaser-by">By 01 May 2027</p>
+          <div class="teaser-monogram"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+        </div>
+      </div>
+      <div class="teaser-text">
+        <p class="script-lead">Kindly Reply</p>
+        <p>We would love to know<br>if you'll be joining us.</p>
+        <a href="#rsvp" class="teaser-btn">Please RSVP</a>
+      </div>
+    </div>
+    <div class="calla calla-bl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-br"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="our-story" id="our-story">
+    <div class="calla calla-tl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <h2 class="page-title page-title--light">Our Story</h2>
+    <p class="page-lead page-lead--light">Ten years, countless memories, and a lifetime still to come.</p>
+
+    <div class="story-timeline">
+      <div class="story-row img-left">
+        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><span class="story-year">2017</span></div>
+      </div>
+      <div class="story-row img-right">
+        <div class="cell-left"><span class="story-year">2018</span></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+      </div>
+      <div class="story-row img-left">
+        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><span class="story-year">2019</span></div>
+      </div>
+      <div class="story-row img-right">
+        <div class="cell-left"><span class="story-year">2020</span></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+      </div>
+      <div class="story-row img-left">
+        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><span class="story-year">2021</span></div>
+      </div>
+      <div class="story-row img-right">
+        <div class="cell-left"><span class="story-year">2022</span></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+      </div>
+      <div class="story-row img-left">
+        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><span class="story-year">2023</span></div>
+      </div>
+      <div class="story-row img-right">
+        <div class="cell-left"><span class="story-year">2024</span></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+      </div>
+      <div class="story-row img-left">
+        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><span class="story-year">2025</span></div>
+      </div>
+      <div class="story-row img-right">
+        <div class="cell-left"><span class="story-year">2026</span></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+      </div>
+      <div class="story-row img-left story-row--last">
+        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-dot"><span class="dot"></span></div>
+        <div class="cell-right"><span class="story-year">2027</span></div>
+      </div>
+    </div>
+
+    <div class="page-footer-mark page-footer-mark--light">
+      <span class="logo-c">C</span><span class="logo-d">D</span>
+    </div>
+    <div class="calla calla-bl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-br calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="venue-page" id="venues">
+    <div class="calla calla-tl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <h2 class="page-title">The Venue</h2>
+    <p class="page-lead">Everything you need to find your way.</p>
+
+    <div class="venue-map">
+      <img src="venue-map.jpg" alt="Aerial map of The Westin Dragonara showing The Sunken Garden, The Reef Club and the Quarry Parking Area">
+    </div>
+
     <div class="venue-cards">
       <div class="venue-card">
         <div class="venue-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M4 9h16"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="9" width="14" height="10" rx="1"/><path d="M9 9V6a3 3 0 016 0v3"/></svg>
         </div>
-        <h4>Ceremony</h4>
-        <p class="venue-time">18:00</p>
-        <p class="venue-place">The Sunken Garden<br>Westin Dragonara, St. Julian's</p>
-        <div class="venue-photo" style="background-image:url('images/venue-ceremony.jpg')"></div>
-        <a class="venue-btn" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/search/?api=1&query=Westin+Dragonara+St+Julians+Malta">Open in Maps</a>
+        <h4>Parking</h4>
+        <p class="venue-place">Designated Quarry Parking</p>
+        <p class="venue-desc">Parking will be available in the designated quarry parking area.</p>
+        <a class="venue-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Quarry+Parking+Area%2C+Westin+Dragonara+Resort%2C+St+Julian%27s%2C+Malta">Get Directions</a>
       </div>
       <div class="venue-card">
         <div class="venue-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h10l-1 5a4 4 0 01-8 0L7 3z"/><path d="M12 12v6"/><path d="M8 21h8"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c3 3 6 5 6 9a6 6 0 01-12 0c0-4 3-6 6-9z"/></svg>
+        </div>
+        <h4>Ceremony</h4>
+        <p class="venue-place">The Sunken Garden<br>The Westin Dragonara, St Julian's</p>
+        <a class="venue-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=The+Sunken+Garden%2C+Westin+Dragonara+Resort%2C+St+Julian%27s%2C+Malta">Get Directions</a>
+      </div>
+      <div class="venue-card">
+        <div class="venue-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h2v9a2 2 0 01-4 0V3zm0 9v9M17 3c-2 0-3 2-3 4s1 3 3 3 3-1 3-3-1-4-3-4zm0 7v10"/></svg>
         </div>
         <h4>Reception</h4>
-        <p class="venue-time">19:30</p>
-        <p class="venue-place">Reef Club<br>Westin Dragonara, St. Julian's</p>
-        <div class="venue-photo" style="background-image:url('images/venue-reception.jpg')"></div>
-        <a class="venue-btn" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/search/?api=1&query=Westin+Dragonara+St+Julians+Malta">Open in Maps</a>
+        <p class="venue-place">The Reef Club<br>The Westin Dragonara, St Julian's</p>
+        <a class="venue-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=The+Reef+Club%2C+Westin+Dragonara+Resort%2C+St+Julian%27s%2C+Malta">Get Directions</a>
       </div>
     </div>
-    <button class="calendar-btn" id="add-to-calendar">Add to Calendar</button>
+
+    <div class="venue-walk">
+      <div class="walk-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="13" cy="4" r="2"/><path d="M13 8l-2 5 3 2 1 6M9 12l-3 2v6M13 13l4 1 3 5"/></svg>
+      </div>
+      <div class="walk-divider"></div>
+      <div class="walk-text">
+        <h4>A Short Walk</h4>
+        <p>The ceremony and reception are both within The Westin Dragonara and are only a short walk apart.</p>
+      </div>
+    </div>
+
+    <p class="venue-note">Guests arriving by taxi may use the hotel's main entrance.</p>
+
+    <div class="page-footer-mark"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="calla calla-bl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-br"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
 
-  <!-- ORDER OF THE DAY -->
-  <section class="timeline-section">
-    <h3>Order of the Day</h3>
-    <p class="section-sub">Schedule for our celebration</p>
-    <div class="timeline-card">
-      <div class="timeline-date">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        Friday, 19 June 2026
-      </div>
+  <!-- TIMELINE (ORDER OF THE DAY) -->
+  <section class="day-timeline" id="timeline">
+    <div class="calla calla-tl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <h2 class="page-title page-title--light">The Timeline</h2>
+    <p class="page-lead page-lead--light">A day to remember, a night to celebrate.</p>
+    <p class="day-date">Saturday, 19 June 2027</p>
 
-      <div class="timeline-row">
-        <div class="timeline-time">18:00</div>
-        <div class="timeline-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg>
-        </div>
-        <div class="timeline-text">
-          <p class="timeline-title">Ceremony</p>
-          <p class="timeline-place">The Sunken Garden, Westin Dragonara</p>
-        </div>
+    <div class="day-rows">
+      <div class="day-row">
+        <span class="day-time">18:00</span>
+        <span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c3 3 6 5 6 9a6 6 0 01-12 0c0-4 3-6 6-9z"/></svg></span>
+        <span class="day-text"><strong>Ceremony</strong><small>The Sunken Garden, The Westin Dragonara</small></span>
       </div>
-
-      <div class="timeline-row">
-        <div class="timeline-time">19:30</div>
-        <div class="timeline-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h10l-1 5a4 4 0 01-8 0L7 3z"/><path d="M12 12v6"/><path d="M8 21h8"/></svg>
-        </div>
-        <div class="timeline-text">
-          <p class="timeline-title">Reception</p>
-          <p class="timeline-place">Reef Club, Westin Dragonara</p>
-        </div>
+      <div class="day-row">
+        <span class="day-time">19:30</span>
+        <span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h2v9a2 2 0 01-4 0V3zm0 9v9M17 3c-2 0-3 2-3 4s1 3 3 3 3-1 3-3-1-4-3-4zm0 7v10"/></svg></span>
+        <span class="day-text"><strong>Reception</strong><small>The Reef Club, The Westin Dragonara</small></span>
       </div>
-
-      <div class="timeline-row">
-        <div class="timeline-time">22:00</div>
-        <div class="timeline-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21h16"/><path d="M6 21v-6a6 6 0 0112 0v6"/><path d="M12 15V9"/><circle cx="12" cy="6" r="2"/></svg>
-        </div>
-        <div class="timeline-text">
-          <p class="timeline-title">Cake Cutting</p>
-        </div>
+      <div class="day-row">
+        <span class="day-time">22:00</span>
+        <span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21h16M6 21v-6a6 6 0 0112 0v6M12 15v-4M9 9a3 3 0 016 0"/></svg></span>
+        <span class="day-text"><strong>Cake Cutting</strong></span>
       </div>
-
-      <div class="timeline-row">
-        <div class="timeline-time">22:30</div>
-        <div class="timeline-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
-        </div>
-        <div class="timeline-text">
-          <p class="timeline-title">First Dance</p>
-        </div>
+      <div class="day-row">
+        <span class="day-time">22:30</span>
+        <span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+        <span class="day-text"><strong>First Dance</strong></span>
       </div>
-
-      <div class="timeline-row">
-        <div class="timeline-time">23:00</div>
-        <div class="timeline-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 3l1.5 3L10 7l-3.5 1L5 11l-1.5-3L0 7l3.5-1L5 3z"/><path d="M18 10l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></svg>
-        </div>
-        <div class="timeline-text">
-          <p class="timeline-title">Party</p>
-        </div>
+      <div class="day-row">
+        <span class="day-time">23:00</span>
+        <span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 3l1.5 3L10 7l-3.5 1L5 11l-1.5-3L0 7l3.5-1L5 3z"/><path d="M18 10l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></svg></span>
+        <span class="day-text"><strong>Party</strong></span>
       </div>
-
-      <div class="timeline-row">
-        <div class="timeline-time">00:30</div>
-        <div class="timeline-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M9 15c1-1 5-1 6 0"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>
-        </div>
-        <div class="timeline-text">
-          <p class="timeline-title">After Party</p>
-        </div>
+      <div class="day-row">
+        <span class="day-time">00:30</span>
+        <span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18"/></svg></span>
+        <span class="day-text"><strong>After Party</strong></span>
       </div>
-
-      <div class="timeline-row">
-        <div class="timeline-time">02:00</div>
-        <div class="timeline-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.9-10-9.3C.3 8.4 2 5 5.4 5 7.6 5 9.5 6.2 12 9c2.5-2.8 4.4-4 6.6-4C22 5 23.7 8.4 22 11.7 19.5 16.1 12 21 12 21z"/></svg>
-        </div>
-        <div class="timeline-text">
-          <p class="timeline-title">Send Off</p>
-        </div>
+      <div class="day-row">
+        <span class="day-time">02:00</span>
+        <span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.9-10-9.3C.3 8.4 2 5 5.4 5 7.6 5 9.5 6.2 12 9c2.5-2.8 4.4-4 6.6-4C22 5 23.7 8.4 22 11.7 19.5 16.1 12 21 12 21z"/></svg></span>
+        <span class="day-text"><strong>Send Off</strong></span>
       </div>
     </div>
-  </section>
 
-  <!-- DRESS CODE -->
-  <section class="dress-code">
-    <h3>Dress Code</h3>
-    <p class="section-sub">Black Tie / Formal Attire</p>
-    <div class="dress-card">
-      <div class="dress-col">
-        <h4>Gentlemen</h4>
-        <p>Tuxedos or dark suits</p>
-      </div>
-      <div class="dress-divider"></div>
-      <div class="dress-col">
-        <h4>Ladies</h4>
-        <p>Elegant evening gowns</p>
-      </div>
-      <p class="dress-note">Out of respect for the bride, we kindly ask guests to refrain
-        from wearing white, ivory, or bridal-style colours.</p>
-    </div>
-  </section>
-
-  <!-- GIFTS -->
-  <section class="gifts">
-    <div class="gifts-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 12h18"/><path d="M12 8v13"/><path d="M12 8c-2 0-3.5-1.2-3.5-3S9 2 10.5 2 12 4 12 5"/><path d="M12 8c2 0 3.5-1.2 3.5-3S15 2 13.5 2 12 4 12 5"/></svg>
-    </div>
-    <p class="section-label">Gifts</p>
-    <div class="gifts-card">
-      <div class="gifts-heart">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.9-10-9.3C.3 8.4 2 5 5.4 5 7.6 5 9.5 6.2 12 9c2.5-2.8 4.4-4 6.6-4C22 5 23.7 8.4 22 11.7 19.5 16.1 12 21 12 21z"/></svg>
-      </div>
-      <p>Your presence at our wedding is the greatest gift of all.</p>
-      <p>Should you wish to honour us with a gift, a monetary contribution
-        would be greatly appreciated.</p>
-    </div>
+    <p class="script-lead script-lead--light day-closing">Until forever begins.</p>
+    <div class="page-footer-mark page-footer-mark--light"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="calla calla-bl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-br calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
 
   <!-- RSVP -->
-  <section class="rsvp" id="rsvp">
-    <p class="section-label">Kindly Respond</p>
-    <h3>RSVP</h3>
-    <p class="rsvp-sub">Please let us know by 19th May 2026</p>
+  <section class="rsvp-page" id="rsvp">
+    <div class="calla calla-tl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <h2 class="page-title">RSVP</h2>
+    <p class="page-lead">We would love to know if you'll be joining us.</p>
+    <p class="rsvp-deadline">Kindly reply by 1 May 2027</p>
 
-    <div class="rsvp-card">
-      <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/mjyvagay" method="POST">
 
-        <div class="form-field">
-          <label for="rsvp-email">Email (optional)</label>
-          <input type="email" id="rsvp-email" name="email" placeholder="you@example.com">
+      <div class="field">
+        <label class="field-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg>Your email</label>
+        <p class="field-hint">Optional</p>
+        <input type="email" name="email" placeholder="you@example.com">
+      </div>
+      <div class="field-divider"><span>&#9670;</span></div>
+
+      <fieldset class="field">
+        <legend class="field-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 8a3 3 0 100-6M23 20c0-2.8-2-5.1-4.6-5.8"/></svg>Will you be joining us?</legend>
+        <label class="pill-radio">
+          <input type="radio" name="attending" value="yes" checked>
+          <span class="pill-dot"></span> Yes, I will joyfully attend
+        </label>
+        <label class="pill-radio">
+          <input type="radio" name="attending" value="no">
+          <span class="pill-dot"></span> Sorry, I cannot attend
+        </label>
+      </fieldset>
+      <div class="field-divider"><span>&#9670;</span></div>
+
+      <div class="field">
+        <label class="field-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 8a3 3 0 100-6M23 20c0-2.8-2-5.1-4.6-5.8"/></svg>How many invited guests will attend?</label>
+        <p class="field-hint">Please include yourself and any guests named below.</p>
+        <div class="guest-counter">
+          <button type="button" id="guest-minus" aria-label="Decrease guests">&minus;</button>
+          <span id="guest-count">1</span>
+          <button type="button" id="guest-plus" aria-label="Increase guests">+</button>
         </div>
+        <input type="hidden" id="guest-count-input" name="guest_count" value="1">
+      </div>
+      <div class="field-divider"><span>&#9670;</span></div>
 
-        <fieldset class="form-field">
-          <legend>Will you attend our wedding? *</legend>
-          <label class="radio-row">
-            <input type="radio" name="attending" value="yes" required checked>
-            Yes, I will joyfully attend
-          </label>
-          <label class="radio-row">
-            <input type="radio" name="attending" value="no" required>
-            Sorry, I cannot attend
-          </label>
-        </fieldset>
-
-        <div class="form-field">
-          <label class="icon-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            How many guests will attend?
-          </label>
-          <p class="counter-caption">Adults</p>
-          <div class="guest-counter">
-            <button type="button" id="guest-minus" aria-label="Decrease guests">-</button>
-            <span id="guest-count">1</span>
-            <button type="button" id="guest-plus" aria-label="Increase guests">+</button>
-          </div>
-          <input type="hidden" id="guest-count-input" name="guest_count" value="1">
-          <p class="confirming-text">Confirming: <span id="confirming-count">1</span> adult</p>
+      <div class="field">
+        <label class="field-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="3.4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>Names of attending guests</label>
+        <p class="field-hint">Please provide the full name of each guest who will be attending.</p>
+        <div id="guest-names">
+          <input type="text" name="guest_name_1" placeholder="Guest 1 full name">
+          <input type="text" name="guest_name_2" placeholder="Guest 2 full name">
         </div>
+        <button type="button" id="add-guest-btn" class="add-guest-btn">+ Add another guest</button>
+      </div>
+      <div class="field-divider"><span>&#9670;</span></div>
 
-        <div class="form-field">
-          <label>Name of each guest</label>
-          <div id="guest-names">
-            <div class="guest-name-field">
-              <label for="guest-name-1">Adult 1 (primary contact)</label>
-              <input type="text" id="guest-name-1" name="guest_name_1" placeholder="Full Name" required>
-            </div>
-          </div>
+      <fieldset class="field">
+        <legend class="field-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M7 2v8M4 2v5a3 3 0 006 0V2M17 2c-2.5 1-3 4-3 6 0 1.6 1 2.6 2 3v11M17 2v20"/></svg>Dietary preferences</legend>
+        <p class="field-hint">Please select any that apply and specify the guest concerned.</p>
+        <div class="checkbox-list">
+          <label class="check-row"><input type="checkbox" name="dietary" value="none">None</label>
+          <label class="check-row"><input type="checkbox" name="dietary" value="vegetarian">Vegetarian</label>
+          <label class="check-row"><input type="checkbox" name="dietary" value="vegan">Vegan</label>
+          <label class="check-row"><input type="checkbox" name="dietary" value="gluten_free">Gluten-free / Coeliac</label>
+          <label class="check-row"><input type="checkbox" name="dietary" value="lactose_free">Lactose-free</label>
+          <label class="check-row"><input type="checkbox" name="dietary" value="other">Other</label>
         </div>
+        <textarea name="dietary_other" placeholder="Allergies or special dietary requirements..."></textarea>
+      </fieldset>
+      <div class="field-divider"><span>&#9670;</span></div>
 
-        <fieldset class="form-field">
-          <legend class="icon-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17h14l-1.4-7.5a5 5 0 00-9.2 0L7 17z"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>
-            Parking
-          </legend>
-          <p class="fieldset-caption">Do you need us to reserve parking for the ceremony?</p>
-          <label class="radio-row">
-            <input type="radio" name="parking" value="yes">
-            Yes, please reserve parking
-          </label>
-          <label class="radio-row">
-            <input type="radio" name="parking" value="no">
-            No, I don't need parking
-          </label>
-        </fieldset>
+      <div class="field">
+        <label class="field-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/></svg>A message for us</label>
+        <p class="field-hint">Optional</p>
+        <textarea id="rsvp-message" name="message" placeholder="Leave us a message..."></textarea>
+      </div>
 
-        <fieldset class="form-field">
-          <legend class="icon-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l9 16H3l9-16z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
-            Dietary Requirements
-          </legend>
-          <p class="fieldset-caption">Please let us know if you have any allergies or dietary restrictions:</p>
-          <div class="checkbox-grid">
-            <label class="check-row"><input type="checkbox" name="dietary" value="gluten_free">Gluten-free / Celiac</label>
-            <label class="check-row"><input type="checkbox" name="dietary" value="lactose_free">Lactose-free</label>
-            <label class="check-row"><input type="checkbox" name="dietary" value="vegetarian">Vegetarian</label>
-            <label class="check-row"><input type="checkbox" name="dietary" value="vegan">Vegan</label>
-            <label class="check-row"><input type="checkbox" name="dietary" value="nut_allergy">Nut allergy</label>
-            <label class="check-row"><input type="checkbox" name="dietary" value="seafood_allergy">Seafood allergy</label>
-            <label class="check-row"><input type="checkbox" name="dietary" value="egg_allergy">Egg allergy</label>
-            <label class="check-row"><input type="checkbox" name="dietary" value="soy_allergy">Soy allergy</label>
-          </div>
-          <label class="form-field" style="margin-top:14px;">
-            <span style="font-size:0.95rem; opacity:0.8;">Other allergies or requirements:</span>
-            <input type="text" name="dietary_other" placeholder="E.g., halal, kosher, fructose intolerance...">
-          </label>
-        </fieldset>
+      <button type="submit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="16" height="16"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Send RSVP
+      </button>
+      <p class="rsvp-note">Responses are sent straight to us by email — thank you for letting us know!</p>
+    </form>
 
-        <div class="form-field">
-          <label for="rsvp-message">Message for the couple (optional)</label>
-          <textarea id="rsvp-message" name="message" placeholder="Leave us a message..."></textarea>
+    <div class="page-footer-mark"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="calla calla-bl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-br"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="details-page" id="details">
+    <div class="calla calla-tl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <h2 class="page-title page-title--light">The Details</h2>
+    <p class="page-lead page-lead--light">A few thoughtful notes for our celebration.</p>
+
+    <div class="detail-card">
+      <h3>Dress Code</h3>
+      <p class="detail-subtitle">Formal Attire</p>
+      <div class="dress-row">
+        <div class="dress-col">
+          <div class="dress-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 4l4 3 4-3 3 5-3 2v10H5V11L2 9l3-5z"/></svg></div>
+          <h4>Gentlemen</h4>
+          <p>Suits</p>
         </div>
-
-        <button type="submit">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-          Send RSVP
-        </button>
-        <p class="rsvp-note">This form isn't connected to an inbox yet — responses will start
-          arriving by email once it's wired up on the backend.</p>
-      </form>
+        <div class="dress-divider"></div>
+        <div class="dress-col">
+          <div class="dress-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 2h6l1 5-2 2 5 13H5L10 9l-2-2 1-5z"/></svg></div>
+          <h4>Ladies</h4>
+          <p>Elegant floor-length evening gowns</p>
+        </div>
+      </div>
+      <p class="dress-note">We kindly ask all guests to refrain from wearing white, ivory, cream, off-white, or any similar shade that may appear white.</p>
     </div>
+
+    <div class="detail-card">
+      <h3>Gifts</h3>
+      <div class="gifts-icon-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 6h16v13H4z"/><path d="M4 10l8 5 8-5"/><path d="M12 21s-7.5-4.9-10-9.3" opacity="0"/></svg>
+      </div>
+      <p>Your presence at our wedding is the greatest gift of all. However, should you wish to honour us with a gift, a monetary contribution towards our future together would be sincerely appreciated.</p>
+    </div>
+
+    <div class="page-footer-mark page-footer-mark--light"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="calla calla-bl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-br calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-page" id="faq">
+    <div class="calla calla-tl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <h2 class="page-title">FAQs</h2>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Where can I park?<span class="faq-toggle">+</span></summary>
+        <p>Parking will be available in the designated quarry parking area near The Westin Dragonara. Please refer to the Venue page for directions.</p>
+      </details>
+      <details class="faq-item" open>
+        <summary>Are the ceremony and reception within walking distance?<span class="faq-toggle">+</span></summary>
+        <p>Yes. The Sunken Garden and The Reef Club are both within The Westin Dragonara and are only a short walk apart.</p>
+      </details>
+      <details class="faq-item" open>
+        <summary>When should I arrive?<span class="faq-toggle">+</span></summary>
+        <p>If you are attending the ceremony, we kindly ask that you arrive before 18:00. Please note that guests cannot be admitted once the ceremony begins. The reception starts at 19:30.</p>
+      </details>
+      <details class="faq-item" open>
+        <summary>Can I bring an additional guest?<span class="faq-toggle">+</span></summary>
+        <p>To help us honour our arrangements, attendance is limited to the guests named on each invitation. Unfortunately, we are unable to accommodate additional guests or plus-ones who have not been included.</p>
+      </details>
+      <details class="faq-item" open>
+        <summary>When is the RSVP deadline?<span class="faq-toggle">+</span></summary>
+        <p>Kindly reply by 1 May 2027.</p>
+      </details>
+    </div>
+
+    <div class="page-footer-mark"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="calla calla-bl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-br"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
 
   <!-- GALLERY -->
-  <section class="gallery">
-    <p class="section-label">Moments</p>
-    <h3>Gallery</h3>
+  <section class="gallery-page" id="gallery">
+    <div class="calla calla-tl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="calla calla-tr"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <h2 class="page-title">Gallery</h2>
     <div class="gallery-grid">
-      <img src="images/photo1.jpg" alt="">
-      <img src="images/photo2.jpg" alt="">
-      <img src="images/photo3.jpg" alt="">
-      <img src="images/photo4.jpg" alt="">
+      <img src="image.png" alt="" class="g-tall">
+      <img src="image.png" alt="" class="g-wide">
+      <img src="image.png" alt="">
+      <img src="image.png" alt="">
+      <img src="image.png" alt="" class="g-wide">
+      <img src="image.png" alt="">
+      <img src="image.png" alt="" class="g-tall">
+      <img src="image.png" alt="" class="g-wide">
+      <img src="image.png" alt="">
+      <img src="image.png" alt="">
     </div>
   </section>
 
   <footer>
-    <p class="footer-names">Dylan &amp; Charisse</p>
-    <p class="footer-date">19th June 2026</p>
+    <div class="footer-monogram"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <p class="footer-names">Charisse &amp; Dylan</p>
+    <p class="footer-date">19th June 2027</p>
   </footer>
 
   <script src="script.js"></script>
