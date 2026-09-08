@@ -37,59 +37,68 @@ if (envelopeIntro) {
   envelopeIntro.addEventListener("touchend", openEnvelope, { passive: true });
 }
 
-// ===== RSVP: GUEST COUNTER + DYNAMIC NAME FIELDS =====
+// ===== MOBILE NAV TOGGLE =====
+const navToggle = document.getElementById("nav-toggle");
+const navInner = document.querySelector(".nav-inner");
+if (navToggle && navInner) {
+  navToggle.addEventListener("click", () => {
+    navInner.classList.toggle("nav-open");
+  });
+}
+
+// ===== PLAY BUTTON (placeholder — no video wired up yet) =====
+const playBtn = document.getElementById("play-video");
+if (playBtn) {
+  playBtn.addEventListener("click", () => {
+    console.log("Save the date video not wired up yet.");
+  });
+}
+
+// ===== RSVP: "HOW MANY GUESTS" COUNTER =====
+// This counter just records a headcount (for catering) — it's independent
+// of the guest name fields below, which guests add manually.
 const guestMinus = document.getElementById("guest-minus");
 const guestPlus = document.getElementById("guest-plus");
 const guestCountEl = document.getElementById("guest-count");
 const guestCountInput = document.getElementById("guest-count-input");
-const confirmingCount = document.getElementById("confirming-count");
-const guestNamesWrap = document.getElementById("guest-names");
 
 const MIN_GUESTS = 1;
-const MAX_GUESTS = 6;
+const MAX_GUESTS = 10;
 let guestCount = 1;
-
-function renderGuestNameFields() {
-  if (!guestNamesWrap) return;
-  guestNamesWrap.innerHTML = "";
-
-  for (let i = 1; i <= guestCount; i++) {
-    const field = document.createElement("div");
-    field.className = "guest-name-field";
-
-    const label = document.createElement("label");
-    label.setAttribute("for", `guest-name-${i}`);
-    label.textContent = i === 1 ? "Adult 1 (primary contact)" : `Adult ${i}`;
-
-    const input = document.createElement("input");
-    input.type = "text";
-    input.id = `guest-name-${i}`;
-    input.name = `guest_name_${i}`;
-    input.placeholder = "Full Name";
-    if (i === 1) input.required = true;
-
-    field.appendChild(label);
-    field.appendChild(input);
-    guestNamesWrap.appendChild(field);
-  }
-}
 
 function updateGuestCount(next) {
   guestCount = Math.min(MAX_GUESTS, Math.max(MIN_GUESTS, next));
   if (guestCountEl) guestCountEl.textContent = guestCount;
   if (guestCountInput) guestCountInput.value = guestCount;
-  if (confirmingCount) confirmingCount.textContent = guestCount;
-  const confirmingText = document.querySelector(".confirming-text");
-  if (confirmingText) {
-    confirmingText.innerHTML = `Confirming: <span id="confirming-count">${guestCount}</span> adult${guestCount > 1 ? "s" : ""}`;
-  }
-  renderGuestNameFields();
 }
 
 if (guestMinus) guestMinus.addEventListener("click", () => updateGuestCount(guestCount - 1));
 if (guestPlus) guestPlus.addEventListener("click", () => updateGuestCount(guestCount + 1));
 
-renderGuestNameFields();
+// ===== RSVP: ADD ANOTHER GUEST NAME FIELD =====
+const guestNamesWrap = document.getElementById("guest-names");
+const addGuestBtn = document.getElementById("add-guest-btn");
+const MAX_GUEST_FIELDS = 10;
+
+if (addGuestBtn && guestNamesWrap) {
+  addGuestBtn.addEventListener("click", () => {
+    const existing = guestNamesWrap.querySelectorAll("input").length;
+    if (existing >= MAX_GUEST_FIELDS) return;
+
+    const next = existing + 1;
+    const input = document.createElement("input");
+    input.type = "text";
+    input.name = `guest_name_${next}`;
+    input.placeholder = `Guest ${next} full name`;
+    guestNamesWrap.appendChild(input);
+
+    if (existing + 1 >= MAX_GUEST_FIELDS) {
+      addGuestBtn.disabled = true;
+      addGuestBtn.style.opacity = "0.5";
+      addGuestBtn.style.cursor = "not-allowed";
+    }
+  });
+}
 
 // ===== ADD TO CALENDAR (downloads a .ics file) =====
 const calendarBtn = document.getElementById("add-to-calendar");
@@ -99,9 +108,9 @@ if (calendarBtn) {
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
       "BEGIN:VEVENT",
-      "SUMMARY:Dylan & Charisse's Wedding",
-      "DTSTART:20260619T180000",
-      "DTEND:20260620T020000",
+      "SUMMARY:Charisse & Dylan's Wedding",
+      "DTSTART:20270619T180000",
+      "DTEND:20270620T020000",
       "LOCATION:Westin Dragonara, St. Julian's",
       "DESCRIPTION:Ceremony at The Sunken Garden, reception at Reef Club.",
       "END:VEVENT",
@@ -112,14 +121,14 @@ if (calendarBtn) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "dylan-and-charisse-wedding.ics";
+    link.download = "charisse-and-dylan-wedding.ics";
     link.click();
     URL.revokeObjectURL(url);
   });
 }
 
 // ===== COUNTDOWN TIMER =====
-const weddingDate = new Date("2026-06-19T18:00:00").getTime();
+const weddingDate = new Date("2027-06-19T18:00:00").getTime();
 
 function pad(num) {
   return String(num).padStart(2, "0");
