@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="locked">
-  <!-- Reusable calla-lily branch artwork, referenced by every .calla decoration -->
+  <!-- Reusable artwork sprites -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="calla-branch" viewBox="0 0 120 220" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
       <!-- stem -->
@@ -22,10 +22,44 @@
       <!-- right leaf -->
       <path d="M58 165 C78 155 96 138 100 120 C90 140 74 155 58 165 Z"/>
     </symbol>
+<symbol id="cd-monogram" viewBox="0 0 559 537">
+<g transform="translate(0.000000,537.000000) scale(0.100000,-0.100000)"
+fill="currentColor" stroke="none">
+<path d="M1870 5159 c-238 -21 -445 -80 -665 -189 -527 -262 -873 -746 -981
+-1375 -27 -154 -24 -461 5 -625 112 -614 479 -1046 1022 -1204 91 -26 212 -46
+282 -46 l42 0 -57 -24 c-86 -35 -147 -74 -201 -128 -105 -105 -132 -248 -71
+-378 145 -307 635 -504 1141 -461 76 7 179 21 228 31 131 29 318 95 421 149
+l89 47 149 -149 c316 -315 528 -462 798 -552 512 -170 1038 12 1247 432 55
+111 72 173 78 296 13 243 -65 438 -243 606 -164 156 -355 231 -588 231 -144 0
+-316 -36 -316 -66 0 -24 22 -25 104 -4 97 24 281 27 384 5 280 -58 494 -243
+583 -503 31 -89 43 -219 30 -308 -47 -318 -278 -569 -617 -670 -120 -35 -324
+-44 -464 -20 -232 41 -445 139 -660 305 -77 59 -440 406 -440 420 0 3 21 19
+48 36 94 59 243 188 322 278 196 222 322 477 392 792 20 88 22 128 22 335 0
+219 -2 243 -26 350 -78 333 -206 569 -433 796 -245 244 -549 393 -915 450
+-113 17 -362 19 -487 4 -48 -6 -154 -27 -236 -46 -137 -34 -149 -35 -172 -20
+-13 8 -25 26 -27 38 -2 13 -10 23 -18 23 -13 0 -15 -30 -18 -198 -2 -184 -1
+-198 15 -195 13 2 20 21 29 78 6 41 17 87 24 102 39 84 267 148 523 148 357 0
+660 -106 950 -334 335 -262 535 -643 566 -1077 8 -116 2 -273 -14 -365 -75
+-429 -311 -844 -618 -1083 -16 -13 -30 -2 -155 124 -230 233 -393 356 -582
+441 -196 88 -366 119 -594 108 -151 -8 -232 3 -376 48 -196 62 -383 180 -535
+339 -406 423 -532 1139 -314 1776 231 675 776 1120 1425 1162 439 29 817 -120
+1106 -434 76 -82 178 -218 220 -292 29 -51 50 -65 63 -43 10 16 -81 164 -166
+270 -281 352 -608 529 -1049 569 -126 12 -133 12 -270 0z m280 -3472 c268 -76
+475 -210 739 -476 l153 -155 -28 -23 c-52 -42 -239 -130 -350 -166 -147 -48
+-275 -67 -442 -67 -289 0 -532 77 -695 219 -74 65 -98 93 -131 156 -70 135
+-51 283 51 396 43 47 100 82 180 110 95 34 131 38 288 34 121 -3 166 -8 235
+-28z M2070 3820 c-14 -4 -50 -8 -80 -9 l-55 -1 0 -970 0 -970 70 0 c39 0 87
+-5 108 -11 22 -6 41 -8 44 -6 2 3 -3 26 -11 51 -14 41 -16 158 -16 986 0 889
+-1 940 -17 939 -10 -1 -29 -5 -43 -9z"/>
+</g>
+    </symbol>
   </svg>
 
   <!-- ENVELOPE INTRO -->
   <div id="envelope-intro" class="envelope-intro">
+    <div class="envelope-calla envelope-calla-left"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <div class="envelope-calla envelope-calla-right"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
+    <p class="envelope-eyebrow" id="envelope-eyebrow">An Invitation For You</p>
     <div class="envelope-wrap" id="envelope-wrap">
       <div class="envelope" id="envelope">
         <div class="envelope-back"></div>
@@ -34,10 +68,10 @@
           <p class="letter-sub">request the pleasure of your company</p>
         </div>
         <div class="envelope-flap"></div>
-        <div class="envelope-seal" id="envelope-seal">C&amp;D</div>
+        <div class="envelope-seal" id="envelope-seal"><svg viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
       </div>
     </div>
-    <p class="envelope-hint" id="envelope-hint">Tap the envelope to open</p>
+    <p class="envelope-hint" id="envelope-hint">Tap to Open</p>
   </div>
   <div class="envelope-flash" id="envelope-flash"></div>
 
@@ -51,7 +85,7 @@
         <li><a href="#timeline">Timeline</a></li>
       </ul>
       <a href="#home" class="nav-logo" aria-label="Charisse and Dylan">
-        <span class="logo-c">C</span><span class="logo-d">D</span>
+        <svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg>
       </a>
       <ul class="nav-links nav-right">
         <li><a href="#rsvp">RSVP</a></li>
@@ -67,7 +101,9 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg" style="background-image:url('image.png')"></div>
+    <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="image.png">
+      <source src="hero-bg-loop.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="eyebrow">The Wedding Of</p>
@@ -84,6 +120,16 @@
     </div>
   </section>
 
+  <!-- SAVE-THE-DATE VIDEO LIGHTBOX -->
+  <div class="video-lightbox" id="video-lightbox">
+    <div class="video-lightbox-inner">
+      <button class="video-lightbox-close" id="video-lightbox-close" aria-label="Close video">&times;</button>
+      <video id="video-lightbox-player" playsinline controls preload="none">
+        <source src="save-the-date.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
   <!-- WELCOME -->
   <section class="welcome" id="welcome-intro">
     <div class="calla calla-tl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
@@ -93,7 +139,7 @@
       <p>We are so excited to celebrate this special chapter with you. Here you'll find all the details you need for our wedding day.</p>
       <p>We can't wait to create unforgettable memories together.</p>
       <p class="welcome-signoff">With all our love,</p>
-      <div class="welcome-monogram"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+      <div class="welcome-monogram"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
     </div>
   </section>
 
@@ -145,7 +191,7 @@
           <p class="teaser-kindly">Kindly</p>
           <p class="teaser-rsvp-word">RSVP</p>
           <p class="teaser-by">By 01 May 2027</p>
-          <div class="teaser-monogram"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+          <div class="teaser-monogram"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
         </div>
       </div>
       <div class="teaser-text">
@@ -167,54 +213,54 @@
 
     <div class="story-timeline">
       <div class="story-row img-left">
-        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-left"><div class="story-photo"><img src="Timeline/2017.jpeg" alt="2017"></div></div>
         <div class="cell-dot"><span class="dot"></span></div>
         <div class="cell-right"><span class="story-year">2017</span></div>
       </div>
       <div class="story-row img-right">
         <div class="cell-left"><span class="story-year">2018</span></div>
         <div class="cell-dot"><span class="dot"></span></div>
-        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-right"><div class="story-photo"><img src="Timeline/2018.jpeg" alt="2018"></div></div>
       </div>
       <div class="story-row img-left">
-        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-left"><div class="story-photo"><img src="Timeline/2019.jpeg" alt="2019"></div></div>
         <div class="cell-dot"><span class="dot"></span></div>
         <div class="cell-right"><span class="story-year">2019</span></div>
       </div>
       <div class="story-row img-right">
         <div class="cell-left"><span class="story-year">2020</span></div>
         <div class="cell-dot"><span class="dot"></span></div>
-        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-right"><div class="story-photo"><img src="Timeline/2020.jpeg" alt="2020"></div></div>
       </div>
       <div class="story-row img-left">
-        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-left"><div class="story-photo"><img src="Timeline/2021.jpeg" alt="2021"></div></div>
         <div class="cell-dot"><span class="dot"></span></div>
         <div class="cell-right"><span class="story-year">2021</span></div>
       </div>
       <div class="story-row img-right">
         <div class="cell-left"><span class="story-year">2022</span></div>
         <div class="cell-dot"><span class="dot"></span></div>
-        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-right"><div class="story-photo"><img src="Timeline/2022.jpeg" alt="2022"></div></div>
       </div>
       <div class="story-row img-left">
-        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-left"><div class="story-photo"><img src="Timeline/2023.jpeg" alt="2023"></div></div>
         <div class="cell-dot"><span class="dot"></span></div>
         <div class="cell-right"><span class="story-year">2023</span></div>
       </div>
       <div class="story-row img-right">
         <div class="cell-left"><span class="story-year">2024</span></div>
         <div class="cell-dot"><span class="dot"></span></div>
-        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-right"><div class="story-photo"><img src="Timeline/2024.jpeg" alt="2024"></div></div>
       </div>
       <div class="story-row img-left">
-        <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-left"><div class="story-photo"><img src="Timeline/2025.jpeg" alt="2025"></div></div>
         <div class="cell-dot"><span class="dot"></span></div>
         <div class="cell-right"><span class="story-year">2025</span></div>
       </div>
       <div class="story-row img-right">
         <div class="cell-left"><span class="story-year">2026</span></div>
         <div class="cell-dot"><span class="dot"></span></div>
-        <div class="cell-right"><div class="story-photo"><img src="image.png" alt=""></div></div>
+        <div class="cell-right"><div class="story-photo"><img src="Timeline/2026.jpeg" alt="2026"></div></div>
       </div>
       <div class="story-row img-left story-row--last">
         <div class="cell-left"><div class="story-photo"><img src="image.png" alt=""></div></div>
@@ -224,7 +270,7 @@
     </div>
 
     <div class="page-footer-mark page-footer-mark--light">
-      <span class="logo-c">C</span><span class="logo-d">D</span>
+      <svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg>
     </div>
     <div class="calla calla-bl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
     <div class="calla calla-br calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
@@ -281,7 +327,7 @@
 
     <p class="venue-note">Guests arriving by taxi may use the hotel's main entrance.</p>
 
-    <div class="page-footer-mark"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="page-footer-mark"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
     <div class="calla calla-bl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
     <div class="calla calla-br"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
@@ -333,7 +379,7 @@
     </div>
 
     <p class="script-lead script-lead--light day-closing">Until forever begins.</p>
-    <div class="page-footer-mark page-footer-mark--light"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="page-footer-mark page-footer-mark--light"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
     <div class="calla calla-bl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
     <div class="calla calla-br calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
@@ -419,7 +465,7 @@
       <p class="rsvp-note">Responses are sent straight to us by email — thank you for letting us know!</p>
     </form>
 
-    <div class="page-footer-mark"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="page-footer-mark"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
     <div class="calla calla-bl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
     <div class="calla calla-br"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
@@ -458,7 +504,7 @@
       <p>Your presence at our wedding is the greatest gift of all. However, should you wish to honour us with a gift, a monetary contribution towards our future together would be sincerely appreciated.</p>
     </div>
 
-    <div class="page-footer-mark page-footer-mark--light"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="page-footer-mark page-footer-mark--light"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
     <div class="calla calla-bl calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
     <div class="calla calla-br calla--light"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
@@ -492,7 +538,7 @@
       </details>
     </div>
 
-    <div class="page-footer-mark"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="page-footer-mark"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
     <div class="calla calla-bl"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
     <div class="calla calla-br"><svg viewBox="0 0 120 220"><use href="#calla-branch"/></svg></div>
   </section>
@@ -517,7 +563,7 @@
   </section>
 
   <footer>
-    <div class="footer-monogram"><span class="logo-c">C</span><span class="logo-d">D</span></div>
+    <div class="footer-monogram"><svg class="monogram-svg" viewBox="0 0 559 537"><use href="#cd-monogram"/></svg></div>
     <p class="footer-names">Charisse &amp; Dylan</p>
     <p class="footer-date">19th June 2027</p>
   </footer>

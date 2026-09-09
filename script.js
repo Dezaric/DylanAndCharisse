@@ -3,6 +3,7 @@ const envelope = document.getElementById("envelope");
 const envelopeWrap = document.getElementById("envelope-wrap");
 const envelopeIntro = document.getElementById("envelope-intro");
 const envelopeHint = document.getElementById("envelope-hint");
+const envelopeEyebrow = document.getElementById("envelope-eyebrow");
 const envelopeFlash = document.getElementById("envelope-flash");
 
 function openEnvelope() {
@@ -11,6 +12,7 @@ function openEnvelope() {
   // Stage 1: flap opens, letter peeks out, hint fades
   envelope.classList.add("opened");
   if (envelopeHint) envelopeHint.classList.add("hidden");
+  if (envelopeEyebrow) envelopeEyebrow.classList.add("hidden");
 
   // Stage 2: after the flap + letter finish, zoom the whole envelope
   // forward while a soft white flash sweeps in behind it
@@ -46,13 +48,41 @@ if (navToggle && navInner) {
   });
 }
 
-// ===== PLAY BUTTON (placeholder — no video wired up yet) =====
+// ===== PLAY BUTTON: opens the save-the-date video with sound,
+// zooming in smoothly, while the silent background loop keeps playing =====
 const playBtn = document.getElementById("play-video");
-if (playBtn) {
-  playBtn.addEventListener("click", () => {
-    console.log("Save the date video not wired up yet.");
+const videoLightbox = document.getElementById("video-lightbox");
+const videoLightboxPlayer = document.getElementById("video-lightbox-player");
+const videoLightboxClose = document.getElementById("video-lightbox-close");
+
+function openVideoLightbox() {
+  if (!videoLightbox || !videoLightboxPlayer) return;
+  videoLightbox.classList.add("show");
+  videoLightboxPlayer.muted = false;
+  videoLightboxPlayer.currentTime = 0;
+  videoLightboxPlayer.play().catch(() => {
+    // Autoplay-with-sound can still be blocked by some browsers even
+    // after a click; the visible controls let the person hit play themselves.
   });
 }
+
+function closeVideoLightbox() {
+  if (!videoLightbox || !videoLightboxPlayer) return;
+  videoLightbox.classList.remove("show");
+  videoLightboxPlayer.pause();
+}
+
+if (playBtn) playBtn.addEventListener("click", openVideoLightbox);
+if (videoLightboxClose) videoLightboxClose.addEventListener("click", closeVideoLightbox);
+if (videoLightbox) {
+  // Click on the dark backdrop (not the video itself) closes it
+  videoLightbox.addEventListener("click", (e) => {
+    if (e.target === videoLightbox) closeVideoLightbox();
+  });
+}
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeVideoLightbox();
+});
 
 // ===== RSVP: "HOW MANY GUESTS" COUNTER =====
 // This counter just records a headcount (for catering) — it's independent

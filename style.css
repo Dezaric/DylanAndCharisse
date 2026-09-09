@@ -64,9 +64,46 @@ body.locked {
   align-items: center;
   justify-content: center;
   gap: 36px;
-  background: radial-gradient(circle at center, #4a3c2c 0%, var(--dark) 100%);
+  background: var(--paper);
   transition: opacity 0.6s ease 0.1s, visibility 0.6s ease 0.1s;
   overflow: hidden;
+}
+
+.envelope-eyebrow {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  color: var(--taupe);
+  font-family: 'Cormorant Garamond', serif;
+  transition: opacity 0.4s ease;
+}
+
+.envelope-eyebrow.hidden {
+  opacity: 0;
+}
+
+.envelope-calla {
+  position: absolute;
+  bottom: -30px;
+  width: 200px;
+  height: 366px;
+  color: var(--brown);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.envelope-calla-left { left: -10px; transform: rotate(-18deg); }
+.envelope-calla-right { right: -10px; transform: scaleX(-1) rotate(-18deg); }
+
+@media (max-width: 900px) {
+  .envelope-calla { width: 130px; height: 238px; bottom: -20px; }
+}
+
+@media (max-width: 600px) {
+  .envelope-calla { width: 90px; height: 165px; opacity: 0.4; }
 }
 
 .envelope-intro.hidden {
@@ -213,17 +250,19 @@ body.locked {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: var(--gold);
-  color: #fff;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 0.9rem;
+  background: #d8c9b3;
+  color: var(--brown);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25), inset 0 1px 2px rgba(255,255,255,0.4);
   z-index: 4;
   transition: opacity 0.5s cubic-bezier(.22,1,.36,1), transform 0.5s cubic-bezier(.22,1,.36,1);
+}
+
+.envelope-seal svg {
+  width: 62%;
+  height: 62%;
 }
 
 .envelope:hover .envelope-seal {
@@ -231,13 +270,25 @@ body.locked {
 }
 
 .envelope-hint {
-  color: #f0e6d8;
-  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  color: var(--brown);
+  letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 0.8rem;
   opacity: 0.85;
   animation: pulse 1.8s infinite;
   transition: opacity 0.4s ease;
+  text-align: center;
+}
+
+.envelope-hint::after {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 1px;
+  background: var(--taupe);
+  margin: 10px auto 0;
 }
 
 @keyframes pulse {
@@ -321,13 +372,10 @@ body.locked {
   justify-content: center;
   text-decoration: none;
   color: var(--brown);
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.9rem;
-  line-height: 1;
   flex-shrink: 0;
 }
 
-.nav-logo .logo-d { margin-left: -0.35em; }
+.nav-logo .monogram-svg { width: 46px; }
 
 .nav-toggle {
   display: none;
@@ -361,7 +409,10 @@ body.locked {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: center/cover no-repeat, linear-gradient(160deg, #3a3128, var(--dark) 60%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(160deg, #3a3128, var(--dark) 60%);
   transform: scale(1.02);
 }
 
@@ -468,6 +519,73 @@ body.locked {
 }
 
 /* ===================================================================
+   SAVE-THE-DATE VIDEO LIGHTBOX
+=================================================================== */
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20,16,12,0.88);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  padding: 20px;
+}
+
+.video-lightbox.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.video-lightbox-inner {
+  position: relative;
+  width: min(90vw, 640px);
+  transform: scale(0.75);
+  opacity: 0;
+  transition: transform 0.55s cubic-bezier(.22,1,.36,1), opacity 0.5s ease;
+}
+
+.video-lightbox.show .video-lightbox-inner {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#video-lightbox-player {
+  width: 100%;
+  max-height: 85vh;
+  display: block;
+  border-radius: 6px;
+  background: #000;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+}
+
+.video-lightbox-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.video-lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===================================================================
    WELCOME / OUR STORY INTRO
 =================================================================== */
 .welcome {
@@ -506,12 +624,12 @@ body.locked {
 }
 
 .welcome-monogram {
-  margin-top: 10px;
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.8rem;
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
 }
 
-.welcome-monogram .logo-d { margin-left: -0.3em; }
+.welcome-monogram .monogram-svg { width: 56px; }
 
 /* Calla lily corner decorations, reused across sections */
 .calla {
@@ -525,6 +643,14 @@ body.locked {
 }
 
 .calla svg { width: 100%; height: 100%; }
+
+/* Interlocking "CD" monogram — reused for nav logo, sign-offs and footers */
+.monogram-svg {
+  display: block;
+  width: 46px;
+  height: auto;
+  color: inherit;
+}
 
 .calla-tl { top: 24px; left: 24px; transform: rotate(-8deg); }
 .calla-tr { top: 24px; right: 24px; transform: scaleX(-1) rotate(-8deg); }
@@ -717,12 +843,12 @@ body.locked {
 
 .teaser-monogram {
   margin-top: 8px;
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.2rem;
   color: var(--taupe);
+  display: flex;
+  justify-content: center;
 }
 
-.teaser-monogram .logo-d { margin-left: -0.3em; }
+.teaser-monogram .monogram-svg { width: 32px; }
 
 .teaser-text {
   text-align: left;
@@ -1285,13 +1411,13 @@ footer {
 }
 
 .footer-monogram {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
   color: var(--gold);
   margin-bottom: 14px;
+  display: flex;
+  justify-content: center;
 }
 
-.footer-monogram .logo-d { margin-left: -0.3em; }
+.footer-monogram .monogram-svg { width: 64px; }
 
 .footer-names {
   font-family: 'Great Vibes', cursive;
@@ -1347,14 +1473,14 @@ footer {
 
 .page-footer-mark {
   margin-top: 60px;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
   color: var(--taupe);
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.page-footer-mark .logo-d { margin-left: -0.3em; }
+.page-footer-mark .monogram-svg { width: 56px; }
 .page-footer-mark--light { color: var(--paper); }
 
 .calla--light { color: var(--paper); opacity: 0.7; }
