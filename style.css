@@ -647,16 +647,19 @@ body.locked {
 .welcome-monogram .monogram-svg { width: 56px; }
 
 /* Calla lily corner decorations, reused across sections — cropped and
-   alpha-matted from the couple's own reference artwork (see calla-dark.png
-   / calla-light.png), not hand-drawn */
+   alpha-matted from the couple's own reference artwork (two distinct
+   flowers, callaA/callaB, each in a dark and light-recolored version
+   for light vs dark page backgrounds) */
 .calla {
   position: absolute;
   width: 90px;
   height: 150px;
-  background: url('calla-dark.png') no-repeat center / contain;
   opacity: 0.6;
   pointer-events: none;
   z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 /* Interlocking "CD" monogram — reused for nav logo, sign-offs and footers */
@@ -667,10 +670,15 @@ body.locked {
   color: inherit;
 }
 
-.calla-tl { top: 24px; left: 24px; transform: rotate(-8deg); }
-.calla-tr { top: 24px; right: 24px; transform: scaleX(-1) rotate(-8deg); }
-.calla-bl { bottom: 24px; left: 24px; transform: rotate(8deg); }
-.calla-br { bottom: 24px; right: 24px; transform: scaleX(-1) rotate(8deg); }
+.calla-tl { top: 24px; left: 24px; background-image: url('callaA-dark.png'); transform: rotate(-8deg); }
+.calla-tr { top: 24px; right: 24px; background-image: url('callaB-dark.png'); transform: rotate(6deg); }
+.calla-bl { bottom: 24px; left: 24px; background-image: url('callaB-dark.png'); transform: scaleX(-1) rotate(-6deg); }
+.calla-br { bottom: 24px; right: 24px; background-image: url('callaA-dark.png'); transform: scaleX(-1) rotate(8deg); }
+
+.calla-tl.calla--light { background-image: url('callaA-light.png'); }
+.calla-tr.calla--light { background-image: url('callaB-light.png'); }
+.calla-bl.calla--light { background-image: url('callaB-light.png'); }
+.calla-br.calla--light { background-image: url('callaA-light.png'); }
 
 @media (max-width: 640px) {
   .calla { width: 56px; height: 94px; }
@@ -1498,7 +1506,7 @@ footer {
 .page-footer-mark .monogram-svg { width: 56px; }
 .page-footer-mark--light { color: var(--paper); }
 
-.calla--light { background-image: url('calla-light.png'); opacity: 0.75; }
+.calla--light { opacity: 0.75; }
 
 /* ===================================================================
    OUR STORY
